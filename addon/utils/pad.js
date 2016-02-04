@@ -16,8 +16,8 @@ export default function pad(n, width, z = '0') {
 /*
  * Template literal function
  *
- * padTpl`${0}:${0}`(2)   === '00:00'
- * padTpl(2)`${0}:${0}(2) === '00:00'
+ * padTpl`${0}:${0}`(2) === '00:00'
+ * padTpl(2)`${0}:${0}` === '00:00'
  */
 export function padTpl(strings, ...values) {
   if (Array.isArray(strings)) {
