@@ -1,1 +1,1 @@
-export { default } from 'ember-pad/utils/pad';
+export { default, padTpl } from 'ember-pad/utils/pad';

@@ -23,6 +23,16 @@ As handlebars helper
 <input type="text" value={{pad value 2}}>
 ```
 
+As template literal function:
+
+```javascript
+import { padTpl } from 'ember-pad/utils/pad'
+
+console.log(padTpl`${4}:${2}`(2)) // '04:02'
+// OR
+console.log(padTpl(2)`${4}:${2}`) // '04:02'
+```
+
 ## Installation
 
 * `git clone` this repository
