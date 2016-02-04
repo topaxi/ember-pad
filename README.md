@@ -1,6 +1,27 @@
-# Ember-pad
+# Ember-pad [![Build Status](https://travis-ci.org/topaxi/ember-pad.svg?branch=master)](https://travis-ci.org/topaxi/ember-pad)
 
 This README outlines the details of collaborating on this Ember addon.
+
+## Addon Installation
+
+* `ember install ember-pad`
+
+## Addon usage
+
+As util function
+
+```javascript
+import pad from 'ember-pad/utils/pad'
+
+console.log(pad(5, 2))        // '05'
+console.log(pad('a', 5, ' ')) // '    a'
+```
+
+As handlebars helper
+
+```handlebars
+<input type="text" value={{pad value 2}}>
+```
 
 ## Installation
 
