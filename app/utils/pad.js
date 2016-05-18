@@ -1,4 +1,4 @@
 export {
-  default, padStart,
-  padTpl, padStartTpl
+  default, padStart, padEnd,
+  padTpl, padStartTpl, padEndTpl
 } from 'ember-pad/utils/pad';
