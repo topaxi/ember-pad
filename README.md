@@ -11,26 +11,31 @@ This README outlines the details of collaborating on this Ember addon.
 As util function
 
 ```javascript
-import pad from 'ember-pad/utils/pad'
+import { padStart } from 'ember-pad/utils/pad'
+import { padEnd   } from 'ember-pad/utils/pad'
 
-console.log(pad(5, 2))        // '05'
-console.log(pad('a', 5, ' ')) // '    a'
+console.log(padStart(5, 2))        // '05'
+console.log(padStart('a', 5, ' ')) // '    a'
+
+console.log(padEnd(5, 2))        // '500'
+console.log(padEnd('a', 5, ' ')) // 'a    '
 ```
 
 As handlebars helper
 
 ```handlebars
-<input type="text" value={{pad value 2}}>
+<input type="text" value={{pad-start value 2}}>
+<input type="text" value={{pad-end value 2}}>
 ```
 
 As template literal function:
 
 ```javascript
-import { padTpl } from 'ember-pad/utils/pad'
+import { padStartTpl } from 'ember-pad/utils/pad'
 
-console.log(padTpl`${4}:${2}`(2)) // '04:02'
+console.log(padStartTpl`${4}:${2}`(2)) // '04:02'
 // OR
-console.log(padTpl(2)`${4}:${2}`) // '04:02'
+console.log(padStartTpl(2)`${4}:${2}`) // '04:02'
 ```
 
 ## Installation
