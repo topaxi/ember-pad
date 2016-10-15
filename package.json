@@ -1,6 +1,6 @@
 {
   "name": "ember-pad",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Ember string padding util and helper",
   "directories": {
     "doc": "doc",
