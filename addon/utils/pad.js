@@ -1,3 +1,7 @@
+function pad(nstr, width, z) {
+  return new Array(width - nstr.length + 1).join(z)
+}
+
 /**
  * Pad the string at the start.
  *
@@ -10,7 +14,12 @@
  */
 export function padStart(n, width, z = '0') {
   let nstr = String(n)
-  return nstr.length >= width ? nstr : new Array(width - nstr.length + 1).join(z) + nstr
+
+  if (nstr.length >= width) {
+    return nstr
+  }
+
+  return pad(nstr, width, z) + nstr
 }
 
 export default padStart
@@ -27,7 +36,12 @@ export default padStart
  */
 export function padEnd(n, width, z = '0') {
   let nstr = String(n)
-  return nstr.length >= width ? nstr : nstr + new Array(width - nstr.length + 1).join(z)
+
+  if (nstr.length >= width) {
+    return nstr
+  }
+
+  return nstr + pad(nstr, width, z)
 }
 
 /*
