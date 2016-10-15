@@ -1,5 +1,12 @@
-function pad(nstr, width, z) {
-  return new Array(width - nstr.length + 1).join(z)
+function pad(len, width, z) {
+  let s = z
+  let w = width - len
+
+  while (--w) {
+    s += z
+  }
+
+  return s
 }
 
 /**
@@ -14,12 +21,13 @@ function pad(nstr, width, z) {
  */
 export function padStart(n, width, z = '0') {
   let nstr = String(n)
+  let len  = nstr.length
 
-  if (nstr.length >= width) {
+  if (len >= width) {
     return nstr
   }
 
-  return pad(nstr, width, z) + nstr
+  return pad(len, width, z) + nstr
 }
 
 export default padStart
@@ -36,12 +44,13 @@ export default padStart
  */
 export function padEnd(n, width, z = '0') {
   let nstr = String(n)
+  let len  = nstr.length
 
-  if (nstr.length >= width) {
+  if (len >= width) {
     return nstr
   }
 
-  return nstr + pad(nstr, width, z)
+  return nstr + pad(len, width, z)
 }
 
 /*
