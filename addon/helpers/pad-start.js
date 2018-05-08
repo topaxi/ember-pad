@@ -1,4 +1,4 @@
-import { helper } from 'ember-helper'
+import { helper } from '@ember/component/helper'
 import { padStart as stringPad } from 'ember-pad/utils/pad'
 
 export function padStart(params) {
