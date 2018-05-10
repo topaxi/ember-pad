@@ -1,6 +1,6 @@
 {
   "name": "ember-pad",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Ember string padding util and helper",
   "keywords": [
     "ember-addon",
