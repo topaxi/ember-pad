@@ -1,0 +1,55 @@
+name: CI
+on: [push, pull_request]
+
+env:
+  NODE_VERSION: 14
+
+jobs:
+  build:
+    name: Build, Lint and Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set Node.js
+      uses: actions/setup-node@v3
+      with:
+          node-version: ${{ env.NODE_VERSION }}
+
+    - name: Install, lint:hbs, lint:js, tests
+      run: |
+        yarn install
+        yarn lint
+        yarn test
+
+  additional:
+    name: Ember additional ${{matrix.ember-release}}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        ember-release:
+          - ember-lts-3.28
+          - ember-release
+          - ember-beta
+          - ember-canary
+          - ember-default-with-jquery
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set Node.js
+      uses: actions/setup-node@v3
+      with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "yarn"
+
+    - name: Install, lint:js, tests
+      continue-on-error: true
+      run: |
+        npm install
+        node_modules/.bin/ember try:one ${{matrix.ember-release}}
