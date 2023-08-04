@@ -38,7 +38,7 @@ console.log(padStartTpl`${4}:${2}`(2)) // '04:02'
 console.log(padStartTpl(2)`${4}:${2}`) // '04:02'
 ```
 
-### Installation
+See the [Contributing](CONTRIBUTING.md) guide for details.
 
 * `git clone <repository-url>`
 * `cd my-addon`
