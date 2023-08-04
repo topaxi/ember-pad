@@ -1,6 +1,8 @@
 'use strict';
 
+/* eslint-disable node/no-unpublished-require */
 const getChannelURL = require('ember-source-channel-url');
+/* eslint-disable node/no-unpublished-require */
 const { embroiderSafe, embroiderOptimized } = require('@embroider/test-setup');
 
 module.exports = async function () {
