@@ -1,8 +1,8 @@
-import { helper } from '@ember/component/helper'
-import { padEnd as stringPad } from 'ember-pad/utils/pad'
+import { helper } from '@ember/component/helper';
+import { padEnd as stringPad } from 'ember-pad/utils/pad';
 
 export function padEnd(params) {
-  return stringPad(params[0], params[1], params[2])
+  return stringPad(params[0], params[1], params[2]);
 }
 
-export default helper(padEnd)
+export default helper(padEnd);
